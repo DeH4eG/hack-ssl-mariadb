@@ -1,0 +1,15 @@
+services:
+  db:
+    build: .
+    ports:
+      - "3307:3306"
+    environment:
+      - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=true
+      - MARIADB_DATABASE=app
+    volumes:
+      - ./ssl.cnf:/etc/mysql/conf.d/ssl.cnf
+
+networks:
+  default:
+    external: true
+    name: dev-travel.com
