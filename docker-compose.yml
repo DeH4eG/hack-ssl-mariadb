@@ -7,8 +7,13 @@ services:
       - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=true
       - MARIADB_DATABASE=app
     volumes:
-      - ./ssl.cnf:/etc/mysql/conf.d/ssl.cnf
-
+      - ./50-server.cnf:/etc/mysql/mariadb.conf.d/50-server.cnf
+  hack:
+    image: hhvm/hhvm:4.8.5
+    entrypoint: ["tail", "-f", "/dev/null"]
+    volumes:
+      - ./hack:/app
+    working_dir: /app
 networks:
   default:
     external: true

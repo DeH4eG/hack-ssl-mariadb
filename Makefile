@@ -44,7 +44,11 @@ logs-f: ## View output from containers [--follow (Follow log output)]
 
 .PHONY: shell-db
 shell-db: ## Starts a new shell session in the php service container
-	@$(DOCKER_COMPOSE) exec -it db bash
+	@$(DOCKER_COMPOSE) exec -it db bash -l
+
+.PHONY: shell-hack
+shell-hack: ## Starts a new shell session in the php service container
+	@$(DOCKER_COMPOSE) exec -it hack bash -l
 
 .PHONY: start
 start: up ## Same as `up`
