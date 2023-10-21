@@ -13,6 +13,7 @@ services:
     entrypoint: ["tail", "-f", "/dev/null"]
     volumes:
       - ./hack:/app
+      - ./ssl:/app/ssl
     working_dir: /app
 networks:
   default:
