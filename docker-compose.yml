@@ -8,6 +8,7 @@ services:
       - MARIADB_DATABASE=app
     volumes:
       - ./50-server.cnf:/etc/mysql/mariadb.conf.d/50-server.cnf
+      - ./sql/.:/docker-entrypoint-initdb.d/
   hack:
     image: hhvm/hhvm:4.8.5
     entrypoint: ["tail", "-f", "/dev/null"]

@@ -1,0 +1,8 @@
+{
+    "workspaceFolder": "/app",
+    "customizations": {
+        "vscode": {
+            "extensions": ["pranayagarwal.vscode-hack"]
+        }
+    }
+}
