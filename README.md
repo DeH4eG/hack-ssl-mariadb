@@ -1,1 +1,1 @@
-# mariad-ssl-connection
+# HACKlang ssl x509 connection to MariaDB
